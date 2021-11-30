@@ -22,19 +22,16 @@ class UserScoreRepository extends ServiceEntityRepository
     // /**
     //  * @return UserScore[] Returns an array of UserScore objects
     //  */
-    /*
-    public function findByExampleField($value)
+    
+    public function top10()
     {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('u.id', 'ASC')
+        return $this->createQueryBuilder('s')
+            ->orderBy('s.score', 'DESC')
             ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
 
     /*
     public function findOneBySomeField($value): ?UserScore

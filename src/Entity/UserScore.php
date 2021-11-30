@@ -33,6 +33,12 @@ class UserScore
      */
     private $score;
 
+    /**
+     * @ORM\Column(type="integer")
+     * @Groups("username:score")
+     */
+    private $time;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -58,6 +64,18 @@ class UserScore
     public function setScore(int $score): self
     {
         $this->score = $score;
+
+        return $this;
+    }
+
+    public function getTime(): ?int
+    {
+        return $this->time;
+    }
+
+    public function setTime(int $time): self
+    {
+        $this->time = $time;
 
         return $this;
     }
